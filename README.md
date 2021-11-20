@@ -1,9 +1,18 @@
-I added start and dev:
+I added: 
+
+start and dev:
    "scripts": {
     "test": "cross-env NODE_ENV=testing jest --verbose --runInBand --silent",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
+
+  INSTALLS I ADDED:
+
+  npm nodemon -D 
+  npm i express colors helmet cors morgan dotenv
+
+
 
 # Adding Data Persistence Sprint Challenge
 

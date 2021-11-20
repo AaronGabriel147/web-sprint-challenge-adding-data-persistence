@@ -1,3 +1,10 @@
+I added start and dev:
+   "scripts": {
+    "test": "cross-env NODE_ENV=testing jest --verbose --runInBand --silent",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+
 # Adding Data Persistence Sprint Challenge
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
@@ -6,14 +13,12 @@ This challenge allows you to practice the concepts and techniques learned over t
 
 This is an individual assessment. All work must be your own. All projects will be submitted to Codegrade for automated review. You will also be given feedback by code reviewers a few days after the challenge submission. For more information on the review process [click here.](https://www.notion.so/bloomtech/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
 
-You are not allowed to collaborate during the sprint challenge.
 
-## Project Set Up
-
+Project Set Up
 - [ ] Run `npm install` to install your dependencies.
 - [ ] Run tests locally executing `npm test`.
 
-## Project Instructions
+
 
 ### Introduction
 

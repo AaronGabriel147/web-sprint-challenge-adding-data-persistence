@@ -1,16 +1,22 @@
-I added: 
+I added these scripts manually: 
 
-start and dev:
-   "scripts": {
+  "scripts": {
     "test": "cross-env NODE_ENV=testing jest --verbose --runInBand --silent",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run"
   },
 
-  INSTALLS I ADDED:
+INSTALLS I ADDED:
 
   npm nodemon -D 
   npm i express colors helmet cors morgan dotenv
+  npm i knex
+  npm i sqlite3
+
+Added everything inside server.js and index.js
+
 
 
 
@@ -24,7 +30,7 @@ This is an individual assessment. All work must be your own. All projects will b
 
 
 Project Set Up
-- [ ] Run `npm install` to install your dependencies.
+- [x] Run `npm install` to install your dependencies.
 - [ ] Run tests locally executing `npm test`.
 
 
@@ -43,6 +49,9 @@ In this project you will be given a set of requirements and must design a databa
 6. migration file(s)
 7. seed file(s) **optional**
 
+
+
+
 ### Required Dependencies
 
 The project needs some additional NPM dependencies in order to work.
@@ -50,6 +59,11 @@ The project needs some additional NPM dependencies in order to work.
 ### Required Scripts
 
 Add `"start"`. `"server"`, `"migrate"` and `"rollback"` scripts to the `package.json` file.
+// I have all but rollback so far....
+
+
+
+
 
 ### Required Tables
 
@@ -62,11 +76,13 @@ Build the migration(s) in Knex inside the `data/migrations` folder using appropr
   - [ ] `project_description` - optional
   - [ ] `project_completed` - the database defaults it to `false` (integer 0) if not provided
 
+
 - [ ] A **resource** is anything needed to complete a project and is stored in a `resources` table with the following columns:
 
   - [ ] `resource_id` - primary key
   - [ ] `resource_name` - required and unique
   - [ ] `resource_description` - optional
+
 
 - [ ] A **task** is one of the steps needed to complete a project and is stored in a `tasks` table with the following columns:
 
@@ -76,7 +92,14 @@ Build the migration(s) in Knex inside the `data/migrations` folder using appropr
   - [ ] `task_completed` - the database defaults it to `false` (integer 0) if not provided
   - [ ] `project_id` - required and points to an actual `project_id` in the `projects` table
 
+
 - [ ] A **resource assignment** connects a resource and a project, and is stored in a `project_resources` table. You decide what columns to use.
+
+
+
+
+
+
 
 ### Required Endpoints
 
@@ -105,13 +128,18 @@ Build an API inside the `api` folder with endpoints for:
   - Each task must include `project_name` and `project_description`
   - Example of response body: `[{"task_id":1,"task_description":"baz","task_notes":null,"task_completed":false,"project_name:"bar","project_description":null}]`
 
-**Notes:**
 
+
+
+
+
+
+
+
+**Notes:**
 - Run tests locally by executing `npm run test`. Tests will be very broken until you flesh out the project sufficiently.
 - You are welcome to create additional files for middlewares etc, but **do not move or rename existing files** or folders.
 - Do not make changes to your `package.json` except to add **additional** dependencies and scripts. Do not update existing packages.
-- In your solution, it is essential that you follow best practices and produce clean and professional results.
-
 ## Submission format
 
 - [ ] Submit via Codegrade by pushing commits to your `main` branch on Github.

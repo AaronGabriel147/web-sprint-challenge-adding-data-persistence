@@ -16,6 +16,9 @@ INSTALLS I ADDED:
   npm i knex
   npm i sqlite3
 
+// once the DB is written, added the following:
+  npm run migrate
+
 
 
 Added everything inside server.js and index.js

@@ -21,17 +21,6 @@ const resourceAssignments = [
 
 
 
-
-
-// async version seems cleaner to me but either way works.
-
-// exports.seed = function (knex) {
-//     return knex('projects')
-//         .truncate().then(() => {
-//             return knex('projects').insert(projects)
-//         })
-// };
-
 exports.seed = async function (knex) {
     await knex('resourceAssignments').truncate();
     await knex('resourceAssignments').insert(resourceAssignments);

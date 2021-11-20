@@ -1,1 +1,5 @@
 Use the `data/migrations` folder to keep your migration(s) as per your knexfile
+
+
+
+Why is this a .txt in here? 

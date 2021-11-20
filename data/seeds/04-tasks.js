@@ -11,21 +11,21 @@
 
 const tasks = [
     {
-        task_description: "task_1",
         task_notes: "project_1's 1st task",
         task_completed: false,
+        task_description: "task_1",
         project_id: 1,
     },
     {
-        task_description: "task_2",
         task_notes: "project_1's 2nd task",
         task_completed: false,
+        task_description: "task_2",
         project_id: 1,
     },
     {
-        task_description: "task_3",
         task_notes: "project_1's 3rd task",
         task_completed: false,
+        task_description: "task_3",
         project_id: 1,
     },
 ]

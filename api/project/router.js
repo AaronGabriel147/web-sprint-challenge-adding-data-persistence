@@ -6,12 +6,10 @@ const Project = require('../../api/project/model');
 
 
 
-// √ [1] can get all projects that exist in the table (123 ms)                                   
-// × [2] each project contains project_name, project_description and project_completed (as a boolean) (76 ms) 
 router.get('/', (req, res, next) => {
     Project.getAll()
-        .then(projects => {
-            res.json(projects)
+        .then(item => {
+            res.json(item)
         })
         .catch(next)
 })
@@ -46,11 +44,11 @@ router.get('/:id', (req, res, next) => {
 
 // In order to test for errors:
 // 404 = enter an empty object into the body of the request { }
-// Not Sure how to test this 500 - ask Zac.
+// Not Sure how to test this 500 - ask Zac. // I think I got it to fire by writing my 'create' model incorrectly.
 router.post('/', async (req, res, next) => {
     try {
         const project = await Project.create(req.body); // req.body is the object that was sent in the request
-        console.log(project)
+        // console.log(project)
         // if (!project.project_name || !project.project_description || !project.project_completed) {
         if (!project) {
             res.status(404).json({

@@ -32,19 +32,19 @@ function findById(idArg) {
 
 
 
-// async function create(project) {
-//     const [id] = await db('projects').create(project)
-//     return findById(id)
-// }
-
 async function create(project) {
     const [id] = await db('projects').insert(project)
-    const projectCreated = findById(id)
-    // projectCreated.map(item => {
-    //     item.project_completed === 1 ? item.project_completed = true : item.project_completed = false;
-    // })
-    return projectCreated;
+    return findById(id)
 }
+
+// async function create(project) {
+//     const [id] = await db('projects').insert(project)
+//     const projectCreated = findById(id)
+//     // projectCreated.map(item => {
+//     //     item.project_completed === 1 ? item.project_completed = true : item.project_completed = false;
+//     // })
+//     return projectCreated;
+// }
 
 
 

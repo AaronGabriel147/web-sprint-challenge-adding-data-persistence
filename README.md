@@ -37,7 +37,7 @@ This is an individual assessment. All work must be your own. All projects will b
 
 Project Set Up
 - [x] Run `npm install` to install your dependencies.
-- [ ] Run tests locally executing `npm test`.
+- [x] Run tests locally executing `npm test`.
 
 
 

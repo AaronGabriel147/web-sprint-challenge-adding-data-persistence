@@ -98,6 +98,7 @@ Build the migration(s) in Knex inside the `data/migrations` folder using appropr
   - [x] `project_id` - required and points to an actual `project_id` in the `projects` table
 
 
+// Not sure I know what this means. It is not showing up in SQLite.
 - [x] resource assignment connects a resource and a project, and is stored in a project_resources table. You decide what columns to use.
 
 

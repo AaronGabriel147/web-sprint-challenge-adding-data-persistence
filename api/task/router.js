@@ -2,19 +2,27 @@ const router = require('express').Router();
 
 
 
-// @@@@@@@ Router model imports look like this:
-// // Models
-// const User = require('../../api/users/user-model')
-// // getAll
+const task = require('../../api/task/model');
+// getAll,
 
 
 
-// connected to server.js
+// Sanity check, connected.
+// router.get('/', (req, res) => {
+//     res.json({
+//         message: 'Tasks router sanity check.'
+//     });
+// });
+
+
+// Get all tasks. Works but no Seeds, returns empty array.
 router.get('/', (req, res) => {
-    res.json({
-        message: 'Tasks router sanity check.'
-    });
-});
+    task.getAll()
+        .then(taskItem => {
+            res.json(taskItem)
+        })
+        .catch(err => console.log(err))
+})
 
 
 module.exports = router;

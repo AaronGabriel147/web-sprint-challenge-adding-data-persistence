@@ -1,21 +1,28 @@
 const router = require('express').Router();
+const resource = require('../../api/resource/model');
+// getAll,
+// findById
 
 
 
-// @@@@@@@ Router model imports look like this:
-// // Models
-// const User = require('../../api/users/user-model')
-// // getAll
-
-
-
-
-// connected to server.js
 router.get('/', (req, res) => {
-    res.json({
-        message: 'Resource router sanity check.'
-    });
-});
+    resource.getAll()
+        .then(resourceItem => {
+            res.json(resourceItem)
+        })
+        .catch(err => console.log(err))
+})
+
+
+
+//     Project.findById(req.params.id)
+//         .then(i => {
+//             res.json(i)
+//         })
+//         .catch(err => console.log(err))
+// })
+
+
 
 
 module.exports = router;

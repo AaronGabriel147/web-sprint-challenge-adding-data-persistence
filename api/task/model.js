@@ -1,23 +1,29 @@
-// @@@@@@@@@@@@@@@@@@@@ models require data sorta like:
-// const db = require("../../data/db-config");
+const db = require("../../data/dbConfig");
 
 
 
-// @@@@@@@@@@@@@@@@@@@@@ Then basic functions:
-// function getAll() {
-//     return db("users");
-// }
-
-// function findById(id) {
-//     return db("users")
-//         .where({ id })
-//         .first();
-// }
 
 
 
-// @@@@@@@@@@@@@@@@@@@ Then Exports
-// exports = module.exports = {
-//     getAll,
-//     findById
-// }
+
+function getAll() {
+    return db("tasks");
+    // return db("database");
+}
+
+
+function findById(id) {
+    return db("xxxxxxxxxxxx")
+        .where({ id })
+        .first();
+}
+
+
+
+
+
+
+exports = module.exports = {
+    getAll,
+    findById
+}

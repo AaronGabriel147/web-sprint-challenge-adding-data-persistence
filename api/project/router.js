@@ -1,26 +1,34 @@
 const router = require('express').Router();
-
-
-
-
-// @@@@@@@ Router model imports look like this:
-// // Models
-// const User = require('../../api/users/user-model')
-// // getAll
-
-const projectModel = require('../../api/project/model');
+const Project = require('../../api/project/model');
 // getAll,
 // findById
 
 
-// connected to server.js
-router.get('/', async (req, res) => {
-    return await projectModel.getAll()
-    // res.json({
-    //     message: 'Project router sanity check.'
-    // });
-});
+
+// CONNECTED!!!!!!
+router.get('/', (req, res) => {
+    Project.getAll()
+        .then(projects => {
+            res.json(projects)
+        })
+        .catch(err => console.log(err))
+})
+
+
+// look at old repo
+// router.get('/:id', (req, res) => {
+
+
+//     Project.findById(req.params.id)
+//         .then(i => {
+//             res.json(i)
+//         })
+//         .catch(err => console.log(err))
+// })
+
+
+
+
 
 
 module.exports = router;
-

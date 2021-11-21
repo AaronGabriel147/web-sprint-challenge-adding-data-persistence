@@ -1,23 +1,26 @@
 const db = require("../../data/dbConfig");
 
-
-
 // SQL: SELECT * FROM posts;
 // Gets all projects. Connected to the database and router. 
-function getAll() {
-    return db("projects");
-}
+// function getAll() {
+//     return db("projects");
+// }
+// getAll. With the Integer / Boolean converter. 
 
+async function getAll() {
+    const intToBool = await db("projects");
+    intToBool.map(item => {
+        item.project_completed === 1 ? item.project_completed = true : item.project_completed = false;
+    })
+    return intToBool;
+}
 
 
 // if a model used another model function as a callback, it must be async.
 // remember the sql flow
 // use documentation.
-
 // SELECT * FROM projects WHERE project_id = 5;
 // SELECT * FROM projects WHERE project_id = argumentId;
-
-
 // return db('posts').where({ id: id, foo: 'bar' }).first() //  Knex version*
 function findById(idArg) {
     console.log("model")
@@ -25,6 +28,36 @@ function findById(idArg) {
         .where({ project_id: idArg })
         .first();
 }
+
+
+
+
+// async function create(project) {
+//     const [id] = await db('projects').create(project)
+//     return findById(id)
+// }
+
+async function create(project) {
+    const [id] = await db('projects').insert(project)
+    const projectCreated = findById(id)
+    // projectCreated.map(item => {
+    //     item.project_completed === 1 ? item.project_completed = true : item.project_completed = false;
+    // })
+    return projectCreated;
+}
+
+
+
+
+
+exports = module.exports = {
+    getAll,
+    create,
+    findById
+}
+
+
+
 
 
 
@@ -65,17 +98,6 @@ function findById(idArg) {
 
 
 
-async function insert(project) {
-    const [id] = await db('projects')
-        .insert(project)
-    return findById(id)
-}
-
-exports = module.exports = {
-    getAll,
-    insert,
-    findById
-}
 
 
 

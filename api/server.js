@@ -27,4 +27,19 @@ server.get('/', (req, res) => {
     });
 });
 
+
+
+server.use(errorHandling) // will trap "".catch/500 errors" happening above
+
+
 module.exports = server;
+
+
+// *catch all 500 errors middleware* 
+function errorHandling(err, req, res, next) {
+    console.log('@@@***inside catch all 500***@@@'),
+        res.status(err.status || 500).json({
+            message: err.message,
+            status: 500
+        })
+}

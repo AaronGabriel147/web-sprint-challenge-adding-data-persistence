@@ -122,10 +122,10 @@ Build an API inside the `api` folder with endpoints for:
 
 
 
-- [ ] `[POST] /api/resources`
+- [x] `[POST] /api/resources`
   - Example of response body: `{"resource_id":1,"resource_name":"foo","resource_description":null}`
 
-- [] `[GET] /api/resources`
+- [x] `[GET] /api/resources`
   - Example of response body: `[{"resource_id":1,"resource_name":"foo","resource_description":null}]`
 
 
@@ -134,7 +134,7 @@ Build an API inside the `api` folder with endpoints for:
 - [ ] `[POST] /api/tasks`
   - Example of response body: `{"task_id":1,"task_description":"baz","task_notes":null,"task_completed":false,"project_id:1}`
 
-- [ ] `[GET] /api/tasks`
+- [x] `[GET] /api/tasks`
   - Each task must include `project_name` and `project_description`
   - Example of response body: `[{"task_id":1,"task_description":"baz","task_notes":null,"task_completed":false,"project_name:"bar","project_description":null}]`
 
@@ -161,7 +161,13 @@ Build an API inside the `api` folder with endpoints for:
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
+
+
 1. Explain the difference between Relational Databases and SQL.
-2. Why do tables need a Primary Key?
-3. What is the name given to a table column that references the Primary Key on another table?
-4. What do we need in order to have a _many to many_ relationship between two tables?
+    There are many forms of data storage and ways to manipulate data, out of all of these forms, Relational Databases are the most common. Relational databases are the oldest databases that exist, they originate from the 1960's. In relational databases the data is stored on 'tables' which is a collection of 'rows' which are each uniquely identified. We have been learning how to communicate with Relational Databases via SQL, which stands for Structured Query Language. In short, a relational database is the storing of the data, and then we use a query language such as SQL to do things with that data, like combine tables, run math, logic, ect. SQL is great for pulling data into an API and using it for we applications with libraries such a Knex.
+
+2. Why do tables need a Primary Key? Primary keys exist to uniquely identify every row of data in a given table. There must be something that is unique to every row, and that is the primary key. 
+
+3. What is the name given to a table column that references the Primary Key on another table? A foreign key column. 
+
+4. What do we need in order to have a _many to many_ relationship between two tables? If we have 20 animals overall among 2 tables, 1 table containing 10 dogs and the other table containing 10 cats, that is many to many. We have many animals and many cats and dogs. We use an intermediary table that uses a foreign key to connect the tables together via a primary key. 
